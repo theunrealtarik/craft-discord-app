@@ -1,6 +1,9 @@
 {
   "name": "craft-discord-app",
-  "version": "1.0.0",
+  "version": "1.0.1",
+  "repository": {
+    "url": "https://github.com/Txreq/craft-discord-app"
+  },
   "description": "",
   "main": "dist/index.js",
   "scripts": {
