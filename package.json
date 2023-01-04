@@ -1,0 +1,29 @@
+{
+  "name": "craft-discord-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "ts-node-dev ./src/index.ts",
+    "build": "tsc --build",
+    "start": "node ."
+  },
+  "bin": {
+    "craft-discord-app": "dist/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/inquirer": "^9.0.3",
+    "@types/node": "^18.11.18",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^4.9.4"
+  },
+  "dependencies": {
+    "create-next-app": "^13.1.1",
+    "ora": "^3.3.0",
+    "chalk": "^4.1.2",
+    "inquirer": "^8.2.5"
+  }
+}
