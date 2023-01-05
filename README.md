@@ -1,6 +1,9 @@
 
 # craft-discord-app
 
+![version](https://img.shields.io/npm/v/craft-discord-app)
+![version](https://img.shields.io/bundlephobia/min/craft-discord-app?label=min)
+
 A CLI tool allows you to get your Discord bot project up and running much faster and easier than copying and pasting boilerplate code from previous projects. It offers a modern setup with zero configuration!
 
   
@@ -19,7 +22,7 @@ Then `cd` to the location where you want to create your project and launch the t
 npx craft-discord-app
 ```
 
-![enter image description here](https://i.ibb.co/qyMBrXQ/agah.gif)
+![usage](https://i.ibb.co/qyMBrXQ/agah.gif)
 
   
 
