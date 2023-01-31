@@ -9,7 +9,7 @@ import fs from "fs";
 import cp from "child_process";
 import util from "util";
 
-import { QuestionCollection, Keys } from "./utils";
+import { QuestionCollection, Keys, copyTemplateFolder } from "./utils";
 
 const main = async (): Promise<void> => {
   const templatePath = path.join(__dirname, "../", "template");
@@ -38,22 +38,6 @@ const main = async (): Promise<void> => {
   const filesTransferNet: FilesTransferNet = {
     err: null,
     file: null,
-  };
-  const copyTemplateFolder = (src: string, dest: string) => {
-    const entries = fs.readdirSync(src, { withFileTypes: true });
-    for (let entry of entries) {
-      let entrySrcPath = path.join(src, entry.name);
-      let entryDestPath = path.join(dest, entry.name);
-
-      if (entry.isDirectory()) {
-        fs.mkdirSync(entryDestPath, {
-          recursive: true,
-        });
-        copyTemplateFolder(entrySrcPath, entryDestPath);
-      } else if (entry.isFile()) {
-        fs.copyFileSync(entrySrcPath, entryDestPath);
-      }
-    }
   };
 
   copyTemplateFolder(templatePath, destPath);

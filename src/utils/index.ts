@@ -1,4 +1,6 @@
 import chalk from "chalk";
+import path from "path";
+import fs from "fs";
 
 export const Keys = {
   CLIENT_ID: "CLIENT_ID",
@@ -41,3 +43,20 @@ export const QuestionCollection = [
     message: "Bot token to login",
   },
 ];
+
+export function copyTemplateFolder(src: string, dest: string) {
+  const entries = fs.readdirSync(src, { withFileTypes: true });
+  for (let entry of entries) {
+    let entrySrcPath = path.join(src, entry.name);
+    let entryDestPath = path.join(dest, entry.name);
+
+    if (entry.isDirectory()) {
+      fs.mkdirSync(entryDestPath, {
+        recursive: true,
+      });
+      copyTemplateFolder(entrySrcPath, entryDestPath);
+    } else if (entry.isFile()) {
+      fs.copyFileSync(entrySrcPath, entryDestPath);
+    }
+  }
+}
